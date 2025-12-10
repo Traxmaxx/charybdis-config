@@ -19,6 +19,7 @@
 #define COMBO_TERM 30  // or 35–40 if you press slowly
 #define CHARYBDIS_MINIMUM_DEFAULT_DPI 3400 // Total range from 400 to 3,400 (400 → 600 → 800 → … → 3,400)
 
+
 #define VIAL_KEYBOARD_UID {0x92, 0x6A, 0xAC, 0xFB, 0x57, 0x12, 0x42, 0x19}
 
 #define VIAL_UNLOCK_COMBO_ROWS \
@@ -37,7 +38,23 @@
 
 #ifdef POINTING_DEVICE_ENABLE
 // Automatically enable the pointer layer when moving the trackball.  See also:
-#	 define CHARYBDIS_AUTO_POINTER_LAYER_TRIGGER_ENABLE
-#	 define CHARYBDIS_AUTO_POINTER_LAYER_TRIGGER_TIMEOUT_MS 2000
+#    define CHARYBDIS_AUTO_POINTER_LAYER_TRIGGER_ENABLE
+#    define CHARYBDIS_AUTO_POINTER_LAYER_TRIGGER_TIMEOUT_MS 2000
 #    define CHARYBDIS_AUTO_POINTER_LAYER_TRIGGER_THRESHOLD 8
 #endif // POINTING_DEVICE_ENABLE
+
+// limits the number of LEDs to process in an animation per task run (increases keyboard responsiveness)
+#define RGB_MATRIX_LED_PROCESS_LIMIT 15
+// Maintain compatibility with the keyboard's RGB Matrix settings
+#define RGB_MATRIX_SLEEP
+#define RGB_MATRIX_FRAMEBUFFER_EFFECTS
+#define RGB_MATRIX_KEYPRESSES
+// Disable RGB when USB is suspended to save power
+#define RGB_DISABLE_WHEN_USB_SUSPENDED true
+// Enable disabling of unmapped keys per layer
+#define RGB_MATRIX_KEYRELEASES
+#define RGB_MATRIX_TIMEOUT 0
+#define RGB_MATRIX_DISABLE_KEYCODES
+// Layer-specific lighting configuration
+#define RGB_MATRIX_LAYER_INDICATORS
+#define RGB_MATRIX_MAXIMUM_BRIGHTNESS 50
