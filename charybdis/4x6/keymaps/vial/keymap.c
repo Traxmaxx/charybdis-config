@@ -40,6 +40,11 @@ static uint16_t auto_pointer_layer_timer = 0;
 #    ifndef CHARYBDIS_AUTO_POINTER_LAYER_TRIGGER_THRESHOLD
 #        define CHARYBDIS_AUTO_POINTER_LAYER_TRIGGER_THRESHOLD 8
 #    endif // CHARYBDIS_AUTO_POINTER_LAYER_TRIGGER_THRESHOLD
+
+#    ifdef RGB_MATRIX_ENABLE
+static uint8_t saved_rgb_mode = 0;
+static HSV saved_rgb_hsv = {0, 0, 0};
+#    endif // RGB_MATRIX_ENABLE
 #endif     // CHARYBDIS_AUTO_POINTER_LAYER_TRIGGER_ENABLE
 
 #define LOWER MO(LAYER_LOWER)
@@ -126,7 +131,9 @@ report_mouse_t pointing_device_task_user(report_mouse_t mouse_report) {
         if (auto_pointer_layer_timer == 0) {
             layer_on(LAYER_POINTER);
 #        ifdef RGB_MATRIX_ENABLE
-            rgb_matrix_mode_noeeprom(RGB_MATRIX_NONE);
+            saved_rgb_mode = rgb_matrix_get_mode();
+            saved_rgb_hsv = rgb_matrix_get_hsv();
+            rgb_matrix_mode_noeeprom(RGB_MATRIX_SOLID_COLOR);
             rgb_matrix_sethsv_noeeprom(HSV_GREEN);
 #        endif // RGB_MATRIX_ENABLE
         }
@@ -140,7 +147,8 @@ void matrix_scan_user(void) {
         auto_pointer_layer_timer = 0;
         layer_off(LAYER_POINTER);
 #        ifdef RGB_MATRIX_ENABLE
-        rgb_matrix_mode_noeeprom(RGB_MATRIX_DEFAULT_MODE);
+        rgb_matrix_mode_noeeprom(saved_rgb_mode);
+        rgb_matrix_sethsv_noeeprom(saved_rgb_hsv.h, saved_rgb_hsv.s, saved_rgb_hsv.v);
 #        endif // RGB_MATRIX_ENABLE
     }
 }
