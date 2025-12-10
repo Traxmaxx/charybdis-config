@@ -40,7 +40,8 @@
 // Automatically enable the pointer layer when moving the trackball.  See also:
 #    define CHARYBDIS_AUTO_POINTER_LAYER_TRIGGER_ENABLE
 #    define CHARYBDIS_AUTO_POINTER_LAYER_TRIGGER_TIMEOUT_MS 2000
-#    define CHARYBDIS_AUTO_POINTER_LAYER_TRIGGER_THRESHOLD 8
+#    define CHARYBDIS_AUTO_POINTER_LAYER_TRIGGER_THRESHOLD 1000
+#    define CHARYBDIS_AUTO_POINTER_LAYER_TRIGGER_WINDOW_MS 1000
 #endif // POINTING_DEVICE_ENABLE
 
 // limits the number of LEDs to process in an animation per task run (increases keyboard responsiveness)
