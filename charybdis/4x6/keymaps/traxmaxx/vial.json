@@ -7,6 +7,18 @@
         "rows": 10,
         "cols": 6
     },
+    "customKeycodes": [
+        { "name": "DRGSCRL", "title": "Drag Scroll" },
+        { "name": "DPI_MOD", "title": "DPI Mode" },
+        { "name": "S_D_MOD", "title": "Sniping/Drag Mod" },
+        { "name": "SNIPING", "title": "Sniping Mode" }
+    ],
+    "layers": [
+        "Base",
+        "Lower",
+        "Raise",
+        "Pointer"
+    ],
     "layouts": {
         "labels": [["Trackball", "Right", "Left"]],
         "keymap": [
