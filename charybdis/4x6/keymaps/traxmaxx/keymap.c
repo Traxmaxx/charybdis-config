@@ -51,6 +51,7 @@ static uint16_t accumulation_timer = 0;
 #    ifdef RGB_MATRIX_ENABLE
 static uint8_t saved_rgb_mode = 0;
 static HSV saved_rgb_hsv = {0, 0, 0};
+static bool pointer_rgb_active = false;
 #    endif // RGB_MATRIX_ENABLE
 #endif     // CHARYBDIS_AUTO_POINTER_LAYER_TRIGGER_ENABLE
 
@@ -142,15 +143,20 @@ report_mouse_t pointing_device_task_user(report_mouse_t mouse_report) {
         accumulated_movement += abs(mouse_report.x) + abs(mouse_report.y);
 
         if (accumulated_movement >= CHARYBDIS_AUTO_POINTER_LAYER_TRIGGER_THRESHOLD) {
-            if (auto_pointer_layer_timer == 0) {
-                layer_on(LAYER_POINTER);
 #        ifdef RGB_MATRIX_ENABLE
+            if (!pointer_rgb_active) {
+                layer_on(LAYER_POINTER);
+                pointer_rgb_active = true;
                 saved_rgb_mode = rgb_matrix_get_mode();
                 saved_rgb_hsv = rgb_matrix_get_hsv();
                 rgb_matrix_mode_noeeprom(RGB_MATRIX_SOLID_COLOR);
                 rgb_matrix_sethsv_noeeprom(HSV_GREEN);
-#        endif // RGB_MATRIX_ENABLE
             }
+#        else
+            if (auto_pointer_layer_timer == 0) {
+                layer_on(LAYER_POINTER);
+            }
+#        endif // RGB_MATRIX_ENABLE
             auto_pointer_layer_timer = timer_read();
         }
     }
@@ -162,6 +168,7 @@ void matrix_scan_user(void) {
         auto_pointer_layer_timer = 0;
         layer_off(LAYER_POINTER);
 #        ifdef RGB_MATRIX_ENABLE
+        pointer_rgb_active = false;
         rgb_matrix_mode_noeeprom(saved_rgb_mode);
         rgb_matrix_sethsv_noeeprom(saved_rgb_hsv.h, saved_rgb_hsv.s, saved_rgb_hsv.v);
 #        endif // RGB_MATRIX_ENABLE
