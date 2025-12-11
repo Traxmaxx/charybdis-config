@@ -8,10 +8,10 @@
         "cols": 6
     },
     "customKeycodes": [
-        { "name": "DRGSCRL" ,"shortName": "DRGSCRL", "title": "Drag Scroll" },
+        { "name": "DRGSCRL", "shortName": "DRGSCRL", "title": "Drag Scroll" },
         { "name": "DPI_MOD", "shortName": "DPI_MOD", "title": "DPI Mode" },
-        { "name":"SNIPING", "shortName": "SNIPING", "title": "Sniping Mode" }
-        { "name": "S_D_MOD", "shortName": "S_D_MOD", "title": "Sniping/Drag Mod" },
+        { "name":"SNIPING", "shortName": "SNIPING", "title": "Sniping Mode" },
+        { "name": "S_D_MOD", "shortName": "S_D_MOD", "title": "Sniping/Drag Mod" }
     ],
     "layers": [
         "Base",
