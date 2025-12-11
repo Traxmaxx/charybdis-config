@@ -39,6 +39,8 @@
 #ifdef POINTING_DEVICE_ENABLE
 // Automatically enable the pointer layer when moving the trackball.  See also:
 #    define CHARYBDIS_AUTO_POINTER_LAYER_TRIGGER_ENABLE
+// Natural scrolling (macOS style) for drag scroll
+#    define CHARYBDIS_DRAGSCROLL_REVERSE_Y
 #    define CHARYBDIS_AUTO_POINTER_LAYER_TRIGGER_TIMEOUT_MS 2000
 #    define CHARYBDIS_AUTO_POINTER_LAYER_TRIGGER_THRESHOLD 1000
 #    define CHARYBDIS_AUTO_POINTER_LAYER_TRIGGER_WINDOW_MS 1000
