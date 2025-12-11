@@ -8,10 +8,14 @@
         "cols": 6
     },
     "customKeycodes": [
-        { "name": "DRGSCRL", "shortName": "DRGSCRL", "title": "Drag Scroll" },
-        { "name": "DPI_MOD", "shortName": "DPI_MOD", "title": "DPI Mode" },
-        { "name":"SNIPING", "shortName": "SNIPING", "title": "Sniping Mode" },
-        { "name": "S_D_MOD", "shortName": "S_D_MOD", "title": "Sniping/Drag Mod" }
+        { "name": "DPI_MOD", "shortName": "DPI_MOD", "title": "Cycle Default DPI" },
+        { "name": "DPI_RMOD", "shortName": "DPI_RMOD", "title": "Cycle Default DPI (Reverse)" },
+        { "name": "S_D_MOD", "shortName": "S_D_MOD", "title": "Cycle Sniping DPI" },
+        { "name": "S_D_RMOD", "shortName": "S_D_RMOD", "title": "Cycle Sniping DPI (Reverse)" },
+        { "name": "SNIPING", "shortName": "SNIPING", "title": "Sniping Mode (Hold)" },
+        { "name": "SNP_TOG", "shortName": "SNP_TOG", "title": "Sniping Mode Toggle" },
+        { "name": "DRGSCRL", "shortName": "DRGSCRL", "title": "Drag Scroll (Hold)" },
+        { "name": "DRG_TOG", "shortName": "DRG_TOG", "title": "Drag Scroll Toggle" }
     ],
     "layers": [
         "Base",
