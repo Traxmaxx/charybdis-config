@@ -43,7 +43,7 @@
 #    define CHARYBDIS_DRAGSCROLL_REVERSE_Y
 #    define CHARYBDIS_AUTO_POINTER_LAYER_TRIGGER_TIMEOUT_MS 1500
 #    define CHARYBDIS_AUTO_POINTER_LAYER_TRIGGER_THRESHOLD 800
-#    define CHARYBDIS_AUTO_POINTER_LAYER_TRIGGER_WINDOW_MS 800
+#    define CHARYBDIS_AUTO_POINTER_LAYER_TRIGGER_WINDOW_MS 500
 #endif // POINTING_DEVICE_ENABLE
 
 // limits the number of LEDs to process in an animation per task run (increases keyboard responsiveness)
