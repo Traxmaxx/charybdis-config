@@ -25,8 +25,10 @@
 
 #define USB_POLLING_INTERVAL_MS 1
 #define QMK_KEYS_PER_SCAN 12
-/* Improve clock speed for faster matrix scanning */
-#define F_CPU 200000000
+/* Improve clock speed for faster matrix scanning
+ * Lsuffix makes sure it's of type long
+ */
+#define F_CPU 200000000L
 #define DIODE_DIRECTION ROW2COL
 
 /* Comboterm timeout
