@@ -16,8 +16,27 @@
  */
 #pragma once
 
-#define COMBO_TERM 30  // or 35–40 if you press slowly
-#define CHARYBDIS_MINIMUM_DEFAULT_DPI 3400 // Total range from 400 to 3,400 (400 → 600 → 800 → … → 3,400)
+/* Improve responsiveness */
+/* Reduce debounce time */
+#define DEBOUNCE 3
+/* enable symm debounce algorithm */
+#define DEBOUNCE_TYPE sym_eager_pk
+/* 1000Hz polling rate (1ms) */
+
+#define USB_POLLING_INTERVAL_MS 1
+#define QMK_KEYS_PER_SCAN 12
+/* Improve clock speed for faster matrix scanning */
+#define F_CPU 200000000
+#define DIODE_DIRECTION ROW2COL
+
+/* Comboterm timeout
+ * 35–40 if you press slowly
+ */
+#define COMBO_TERM 30
+/* Trackball DPI
+ * Total range from 400 to 3,400 (400 → 600 → 800 → … → 3,400)
+ */
+#define CHARYBDIS_MINIMUM_DEFAULT_DPI 3400
 
 
 #define VIAL_KEYBOARD_UID {0x92, 0x6A, 0xAC, 0xFB, 0x57, 0x12, 0x42, 0x19}
@@ -41,9 +60,9 @@
 #    define CHARYBDIS_AUTO_POINTER_LAYER_TRIGGER_ENABLE
 // Natural scrolling (macOS style) for drag scroll
 #    define CHARYBDIS_DRAGSCROLL_REVERSE_Y
-#    define CHARYBDIS_AUTO_POINTER_LAYER_TRIGGER_TIMEOUT_MS 1500
-#    define CHARYBDIS_AUTO_POINTER_LAYER_TRIGGER_THRESHOLD 800
-#    define CHARYBDIS_AUTO_POINTER_LAYER_TRIGGER_WINDOW_MS 500
+#    define CHARYBDIS_AUTO_POINTER_LAYER_TRIGGER_TIMEOUT_MS 1600
+#    define CHARYBDIS_AUTO_POINTER_LAYER_TRIGGER_THRESHOLD 400
+#    define CHARYBDIS_AUTO_POINTER_LAYER_TRIGGER_WINDOW_MS 600
 #endif // POINTING_DEVICE_ENABLE
 
 // limits the number of LEDs to process in an animation per task run (increases keyboard responsiveness)
