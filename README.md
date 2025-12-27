@@ -11,15 +11,17 @@ There are 6x4 and 5x3 "Nano" versions.
 Make example for this keyboard (after setting up your build environment):
 
 ```
-make bastardkb/charybdis/4x6/v2/splinky_3:default
-make bastardkb/charybdis/4x6/v2/splinky_3:vial
+make bastardkb/charybdis/4x6:default
+make bastardkb/charybdis/4x6:vial
+make bastardkb/charybdis/4x6:traxmaxx
 ```
 
 Flashing example for this keyboard:
 
 ```
-make bastardkb/charybdis/4x6/v2/splinky_3:default:flash
-make bastardkb/charybdis/4x6/v2/splinky_3:vial:flash
+make bastardkb/charybdis/4x6:default:flash
+make bastardkb/charybdis/4x6:vial:flash
+make bastardkb/charybdis/4x6:traxmaxx:flash
 ```
 
 ## Bootloader

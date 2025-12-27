@@ -1,5 +1,4 @@
-/*
- * Copyright 2021 Quentin LEBASTARD <qlebastard@gmail.com>
+/**
  * Copyright 2021 Charly Delay <charly@codesink.dev> (@0xcharly)
  *
  * This program is free software: you can redistribute it and/or modify
@@ -15,19 +14,23 @@
  * You should have received a copy of the GNU General Public License
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
-
 #pragma once
 
-/* Pointing device configuration. */
+#ifdef VIA_ENABLE
+/* VIA configuration. */
+#    define DYNAMIC_KEYMAP_LAYER_COUNT 4
+#endif // VIA_ENABLE
 
-// Enable use of pointing device on slave split.
-#define SPLIT_POINTING_ENABLE
+#ifndef __arm__
+/* Disable unused features. */
+#    define NO_ACTION_ONESHOT
+#endif // __arm__
 
-// Pointing device is on the right split.
-#define POINTING_DEVICE_RIGHT
+/* Charybdis-specific features. */
 
-// Limits the frequency that the sensor is polled for motion.
-#define POINTING_DEVICE_TASK_THROTTLE_MS 1
-
-// Invert X axis on mouse reports.
-#define POINTING_DEVICE_INVERT_X
+#ifdef POINTING_DEVICE_ENABLE
+// Automatically enable the pointer layer when moving the trackball.  See also:
+// - `CHARYBDIS_AUTO_POINTER_LAYER_TRIGGER_TIMEOUT_MS`
+// - `CHARYBDIS_AUTO_POINTER_LAYER_TRIGGER_THRESHOLD`
+// #define CHARYBDIS_AUTO_POINTER_LAYER_TRIGGER_ENABLE
+#endif // POINTING_DEVICE_ENABLE

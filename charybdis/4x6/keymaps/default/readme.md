@@ -1,6 +1,6 @@
 # Charybdis (4x6) default keymap
 
-> :bulb: Have a look at the [`via` keymap](../via) for a more feature-rich layout.
+> :bulb: Have a look at the [`via` keymap](../vial) for a more feature-rich layout.
 
 The Charydbis (4x6) default keymap is inspired from the original [Dactyl Manuform](../../../../../handwired/dactyl_manuform) default keymap.
 

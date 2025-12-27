@@ -13,3 +13,7 @@ A simple QWERTY layout with 3 layers.
 ### [`via`](keymaps/via)
 
 Same as the [default](keymaps/default) keymap, but with VIA support.
+
+## [`vial`](keymaps/vial)
+
+Same as the [default](keymaps/default) keymap, but with VIAL support.
